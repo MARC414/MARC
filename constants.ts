@@ -1,3 +1,4 @@
+
 import { PenTool, Rocket, Code, Layout, Globe, Search, Megaphone, Mail, FileText, Globe2, Building2, Briefcase, Languages } from "lucide-react";
 import { AI_Tool, Credential, NavItem, Service, CreativeWork, FAQItem, JobRole, Testimonial, BlogPost } from "./types";
 
@@ -200,12 +201,12 @@ export const CERTIFICATIONS: Credential[] = [
 
 export const CREATIVE_WORKS: CreativeWork[] = [
   {
-    title: "Fakir Lalon Shah",
-    type: "AI Sketch Art",
-    // Updated to a more sketch-like/artistic placeholder to match "Nano Banana" generation
-    imageUrl: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=800&auto=format&fit=crop", 
-    link: "#",
-    tags: ["Generated with Nano Banana", "Digital Art"]
+    title: "Philosophy of Fakir Lalon Shah",
+    type: "Sketch Art & Article",
+    // Use a direct image URL of a sketch of Lalon Shah or a very similar Sufi mystic sketch representation
+    imageUrl: "https://lh3.googleusercontent.com/d/1koBZwhtQfTNSo1BeJouveWCMI_guJlE4", 
+    link: "https://www.linkedin.com/pulse/life-philosophy-fakir-lalon-shah-mystic-poet-baul-sufi-chowdhury-gtt5c/?trackingId=4U2t7lyvTzW5sYDJ1EjySQ%3D%3D",
+    tags: ["Digital Art"]
   },
   {
     title: "TV Drama Production",
