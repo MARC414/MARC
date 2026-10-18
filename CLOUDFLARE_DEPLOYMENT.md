@@ -29,34 +29,22 @@ Fill in the deployment settings as follows:
 
 | Setting | Value |
 |---|---|
-| **Project name** | `marc-portfolio` (or your preferred name) |
+| **Project name** | `farhanmomen` |
 | **Production branch** | `main` |
 | **Framework preset** | `Vite` |
 | **Build command** | `npm run build` |
 | **Build output directory** | `dist` |
 
-*(Optional)* Under **Environment variables (advanced)**, you can add:
+*(Optional)* Under **Environment variables (advanced)**:
 - Variable: `NODE_VERSION`
 - Value: `22`
 
-*(If you ever use Gemini API features in the future, you can also add `GEMINI_API_KEY` here).*
-
 ### Step 4: Deploy
 1. Click **Save and Deploy**.
-2. Cloudflare will clone your repository, run `npm install`, compile the Vite production bundle into `dist`, and publish it to a global `.pages.dev` URL (e.g. `https://marc-portfolio.pages.dev`).
-
----
-
-## Method 2: GitHub Actions CI/CD (Optional)
-
-If you prefer deploying via GitHub Actions rather than giving Cloudflare direct Git access, a complete workflow is pre-configured at `.github/workflows/deploy-cloudflare.yml`.
-
-### Setup Secrets in GitHub
-1. Go to your GitHub repository > **Settings** > **Secrets and variables** > **Actions**.
-2. Add the following repository secrets:
-   - `CLOUDFLARE_API_TOKEN`: Create an API token in Cloudflare Dashboard under **My Profile** > **API Tokens** > **Create Token** > use the **Cloudflare Pages** template (Edit Cloudflare Pages permission).
-   - `CLOUDFLARE_ACCOUNT_ID`: Found on the right sidebar of the Cloudflare Dashboard home or in any domain overview.
-3. Every commit pushed to `main` will run tests, build the site, and deploy directly to Cloudflare Pages.
+2. Cloudflare will clone your repository, run `npm install` via Node 22, compile the Vite production bundle into `dist`, and publish it to:
+   ```text
+   https://farhanmomen.pages.dev
+   ```
 
 ---
 
