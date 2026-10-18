@@ -70,3 +70,19 @@ export interface BlogPost {
   author: string;
   readTime: string;
 }
+
+export interface FeaturedProject {
+  id: string;
+  title: string;
+  headline: string;
+  description: string;
+  url: string;
+  category: 'client' | 'next' | 'affiliate';
+  categoryLabel: string;
+  status: string;
+  statusType: 'live' | 'development' | 'upcoming';
+  imageUrl: string;
+  fallbackImageUrl?: string;
+  tags: string[];
+  metrics?: string;
+}

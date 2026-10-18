@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Hero from './Hero';
 import Experience from './Experience';
 import VerifiedExperience from './VerifiedExperience';
+import FeaturedProjects from './FeaturedProjects';
 import Services from './Services';
 import AIStrategy from './AIStrategy';
 import Credentials from './Credentials';
@@ -36,6 +37,7 @@ const Home: React.FC = () => {
       <Hero />
       <VerifiedExperience />
       <Experience />
+      <FeaturedProjects />
       <Services />
       <AIStrategy />
       <Credentials />

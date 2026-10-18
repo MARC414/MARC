@@ -1,127 +1,127 @@
-# Cloudflare Pages Deployment & Compatibility Implementation Plan
+# Featured Projects Showcase & Personal Intro Refinement Implementation Plan
 
-Configure the MARC portfolio website for seamless, high-performance deployment on Cloudflare Pages, ensuring proper single-page routing, edge security headers, static asset caching, and an automated GitHub Actions deployment workflow.
+Integrate a dedicated, high-converting "Featured Projects & Client Work" showcase section into the portfolio (`ural-travel.pages.dev`, `hostmarc.pages.dev`, `emarket247.shop`, and `sunlitbd.com`), and refine the Hero portrait card with an elegant introductory clarification under the photograph: *"Hi, I am Momen Ahmedur Rahman Chowdhury (MARC)"*.
 
 ---
 
 ## User Review & Critical Decisions
 
 > [!IMPORTANT]
-> The following architectural decisions were confirmed via interactive consultation and will guide the implementation:
+> The following adjustments and architectural specifications are incorporated from user feedback:
 
-- **Deployment Platform**: Cloudflare Pages with Git integration (continuous deployment triggered automatically on code push).
-- **SPA Routing & Edge Headers**: Add `public/_redirects` to route all dynamic and deep links to `/index.html` (HTTP 200 rewrite) and `public/_headers` to enforce modern security standards and long-term immutable asset caching.
-- **CI/CD Automation**: Provide a ready-to-use GitHub Actions workflow (`.github/workflows/deploy-cloudflare.yml`) for automated testing and deployment, alongside direct dashboard integration instructions.
+- **Personal Introduction Under Portrait**:
+  - Add a dedicated, smart caption under the Hero headshot:
+    **"Hi, I am Momen Ahmedur Rahman Chowdhury (MARC)"**
+  - Clarifies that **MARC** is the professional acronym formed by his full name (**M**omen **A**hmedur **R**ahman **C**howdhury), presented with subtle typographic styling, a friendly greeting badge, and high visual contrast.
+- **Dedicated Featured Projects Section**:
+  - Position a new **"Featured Projects & Client Work"** section between the career timeline and specialized services, anchored in the top navbar (`#projects`).
+- **Interactive Filtering Tabs**:
+  - Responsive segmented tabs to filter by:
+    - `All Projects`
+    - `Client Work` (`emarket247.shop`, `sunlitbd.com`)
+    - `Next Projects` (`ural-travel.pages.dev`)
+    - `Affiliate & Personal Ventures` (`hostmarc.pages.dev`)
+- **Live Visual Snapshots & Status Indicators**:
+  - Real OpenGraph and dynamic snapshots for all three sites (`ural-travel.pages.dev/og-image.jpg`, `hostmarc.pages.dev`, `emarket247.shop`).
+  - Active status indicators (e.g. *Under Development* with an animated live pulse for `emarket247.shop`, *Live Venture* for `hostmarc.pages.dev`, *Next Venture · Beta* for `ural-travel.pages.dev`).
 
 ---
 
 ## 1. Overview & Core Concept
 
-- **What It Does**: Transforms the existing Vite React portfolio into a fully Cloudflare Pages-ready application. When deployed, Cloudflare's global edge network will serve the optimized production assets directly with sub-50ms latency, zero routing collisions, and strict HTTP headers.
-- **Target Audience / Persona**: The website owner (Momen Ahmedur Rahman Chowdhury / MARC) and visitors accessing his portfolio across global regions.
-- **Key Value**: Guarantees zero "404 Page Not Found" errors on browser refreshes or direct link navigations, maximizes Google PageSpeed and Lighthouse security scores via custom headers, and establishes an automated push-to-deploy pipeline.
+- **What It Does**:
+  1. Solves brand clarity right in the Hero fold by explicitly explaining the origin and meaning of MARC.
+  2. Expands the portfolio from a single Sunlit case study to a full digital ecosystem displaying active client builds, tourism tech platforms, and affiliate web engineering ventures.
+- **Target Audience / Persona**: Prospective clients, business partners, recruiters, and agency collaborators.
+- **Key Value**: Delivers immediate personal connection and trust, paired with proof of live multi-disciplinary execution across e-commerce, travel, and web hosting.
 
 ---
 
-## 2. Platform Architecture & Edge Configuration
+## 2. User Experience & Visual Design
 
-### Cloudflare Pages Routing (`_redirects`)
-In a Single Page Application (SPA), routes or bookmarkable URLs are handled by client-side code. Without explicit server/edge rewrite rules, navigating directly to a deep URL or refreshing the page prompts Cloudflare to look for a physical file and return a 404.
-- Creating `public/_redirects`:
+### Hero Portrait Clarification Placement
+Under the executive portrait card in `components/Hero.tsx`, we add a tailored introduction card:
+- A soft pill greeting: *"Personal Introduction"*
+- A prominent headline quote or intro:
   ```text
-  /*    /index.html   200
+  "Hi, I am Momen Ahmedur Rahman Chowdhury (MARC)"
   ```
-- Vite copies the contents of `public/` directly into `dist/` on build, so Cloudflare Pages detects `_redirects` automatically at the root of the deployment.
+  with the initials highlighted (**M**omen **A**hmedur **R**ahman **C**howdhury = **MARC**).
+- A concise 1-line explainer: *"15 years blending classic storytelling with cutting-edge AI systems."*
 
-### Edge Security & Performance Headers (`_headers`)
-Configuring `public/_headers` to apply production headers across all routes and immutable caching for static bundles:
-- `/*`:
-  - `X-Frame-Options: SAMEORIGIN`
-  - `X-Content-Type-Options: nosniff`
-  - `Referrer-Policy: strict-origin-when-cross-origin`
-  - `Permissions-Policy: camera=(), microphone=(), geolocation=()`
-  - `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`
-- `/assets/*`:
-  - `Cache-Control: public, max-age=31536000, immutable` (leverages Vite's content-hashed filenames for lightning-fast caching).
-
-### Cloudflare Environment Compatibility
-- Cloudflare Pages build systems support modern Node.js versions. We define `.node-version` (or specify `NODE_VERSION: 22` in Pages build environment variables) to ensure Node 22 build consistency matching this environment.
+### Featured Projects Section Design
+- **Section Kicker**: *"Client Work & Live Ventures"*
+- **Headline**: *"Featured Projects & Digital Ecosystem"*
+- **Filter Tabs**:
+  - `All Projects` (4)
+  - `Client Work` (2)
+  - `Next Projects` (1)
+  - `Affiliate & Personal` (1)
+- **Project Cards**:
+  1. **eMarket247 (`emarket247.shop`)**:
+     - Status: `Under Development · Client Project` (Amber pulse dot)
+     - Tech: `E-Commerce Architecture`, `Jewellery & Fashion`, `Client Funnels`
+     - Snapshot: Direct editorial banner from `emarket247.shop`
+  2. **HostMarc (`hostmarc.pages.dev`)**:
+     - Status: `Live Personal Venture & Affiliate Platform` (Blue badge)
+     - Tech: `Web Engineering`, `Server Benchmarks`, `Hosting Consultation`
+     - Snapshot: Live rendered viewport snapshot
+  3. **URAL Travel (`ural-travel.pages.dev`)**:
+     - Status: `Next Venture · Travel Tech Beta` (Cyan badge)
+     - Tech: `Travel SEO`, `Flight Search & Visas`, `Cloudflare Pages`
+     - Snapshot: Official `og-image.jpg` from `ural-travel.pages.dev`
+  4. **Sunlit Interior (`sunlitbd.com`)**:
+     - Status: `Lead Marketing Case Study` (Emerald badge)
+     - Tech: `WordPress + Elementor`, `Full-Stack Lead Gen`, `SEO Leadership`
+     - Snapshot: Live Sunlit web preview
 
 ---
 
 ## 3. Key Product Decisions & Trade-Offs
 
-- **Decision 1: Direct Cloudflare Pages Git Integration vs. Workers Sites**
-  - *Chosen Approach*: Cloudflare Pages standard Git deployment.
-  - *Why*: Cloudflare Pages is natively designed for frontend SPAs (Vite, React, Next static export), includes automatic preview deployments for pull requests, has zero egress fees for static assets, and requires no custom server worker code.
-  - *Alternatives Considered*: Cloudflare Workers Sites (deprecated in favor of Pages / Workers Assets) and Cloudflare Workers with server adapters (unnecessary overhead for a pure client-side SPA).
-
-- **Decision 2: Static `_redirects` File vs. Custom Cloudflare Functions**
-  - *Chosen Approach*: Declarative `_redirects` in `public/`.
-  - *Why*: Cloudflare Pages processes declarative redirects at the CDN edge before invoking any compute, ensuring 0ms compute execution time and instantaneous response.
-
-- **Decision 3: Dual Deployment Setup (GitHub Dashboard + GitHub Actions)**
-  - *Chosen Approach*: Support both direct Cloudflare Git connection (recommended for simplest setup) and an optional GitHub Actions workflow (`.github/workflows/deploy-cloudflare.yml`).
-  - *Why*: Gives total flexibility to deploy either completely hands-free via Cloudflare's own GitHub App or via GitHub Actions with custom CI quality checks (type checking, linting, building).
+- **Decision 1: Placement of the Introduction Line**
+  - *Chosen Approach*: Directly anchored beneath the Hero headshot in a glassmorphic badge card.
+  - *Why*: It directly associates the face with the full name and acronym, answering "Who is MARC?" within the first 3 seconds of page visit.
+- **Decision 2: Interactive React State Filter vs. Page Links**
+  - *Chosen Approach*: Single-page client-side filter tabs with smooth state transitions.
+  - *Why*: Instantaneous response with zero page reload or scroll disruption.
 
 ---
 
-## 4. Technical Architecture & Integration Strategy
-
-### System & Deployment Architecture Diagram
+## 4. Technical Architecture & Component Flow
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│                        DEVELOPER / GITHUB REPO                         │
+│                                 APP.TSX                                │
 │                                                                        │
-│   git push origin main                                                 │
-│     ├── Triggers Cloudflare Pages Automatic Build                      │
-│     └── (Optional) Triggers .github/workflows/deploy-cloudflare.yml    │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│                       CLOUDFLARE BUILD PIPELINE                        │
-│                                                                        │
-│   Node.js 22 Runtime                                                   │
-│   Build command : npm run build                                        │
-│   Output folder : dist                                                 │
-│                                                                        │
-│   Assets generated in dist/:                                           │
-│     ├── index.html                                                     │
-│     ├── assets/ (JS/CSS bundles with content hashes)                   │
-│     ├── _redirects (SPA rewrite: /* -> /index.html 200)                 │
-│     └── _headers (Security & Cache-Control policies)                   │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│                      CLOUDFLARE GLOBAL EDGE CDN                        │
-│                                                                        │
-│   Client Request (e.g., https://yourdomain.com/credentials)            │
-│     ├── Matched by _redirects -> Serves /index.html (Status 200)       │
-│     ├── Enforces Security Headers (HSTS, CSP, X-Frame-Options)         │
-│     └── Static Asset Requests (/assets/*) -> Served from Edge Cache    │
+│  ├── Navbar (Includes "Projects" anchor)                               │
+│  ├── Hero                                                              │
+│  │     ├── Left: Value proposition, headline, trust tags, CTAs         │
+│  │     └── Right: Headshot + "Hi, I am Momen Ahmedur Rahman Chowdhury  │
+│  │               (MARC)" clarifying badge                              │
+│  ├── VerifiedExperience (GaoTek US certificates)                       │
+│  ├── Experience (Career timeline)                                      │
+│  ├── FeaturedProjects (NEW - id="projects")                            │
+│  │     ├── Interactive Filter Tabs (All / Client / Next / Affiliate)   │
+│  │     └── 4 Detailed Visual Cards (eMarket247, HostMarc, URAL, Sunlit)│
+│  ├── Services                                                          │
+│  ├── AIStrategy                                                        │
+│  └── ... (Credentials, Creative, Testimonials, FAQ, Contact, Footer)   │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Proposed Changes & File Additions
+### Proposed Changes
 
-1. **`public/_redirects`**:
-   - Creates the fallback rule `/*  /index.html  200` to support React Router / client-side hash and path navigation without 404s.
-
-2. **`public/_headers`**:
-   - Injects security headers and optimal caching headers for Vite asset chunks.
-
-3. **`.node-version`**:
-   - Pins Node version `22` for Cloudflare's build image.
-
-4. **`.github/workflows/deploy-cloudflare.yml`**:
-   - Automates build verification (`npm run lint`, `npm run build`) and deploys to Cloudflare Pages via `cloudflare/pages-action` using GitHub secrets (`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`).
-
-5. **`CLOUDFLARE_DEPLOYMENT.md`**:
-   - A step-by-step walkthrough covering:
-     - Connecting GitHub to Cloudflare Pages dashboard
-     - Setting Build Command (`npm run build`) and Build Output Directory (`dist`)
-     - Adding custom domain (e.g., `webworm.com.au` or personal domain) and enabling free SSL/TLS
-     - Configuring GitHub Secrets if using the Actions workflow
+1. **`components/Hero.tsx`**:
+   - Add the clear introductory caption under the headshot: *"Hi, I am Momen Ahmedur Rahman Chowdhury (MARC)"* with styled initials.
+2. **`types.ts`**:
+   - Define the `FeaturedProject` type interface.
+3. **`constants.ts`**:
+   - Add `FEATURED_PROJECTS` array with detailed metadata, live URLs, snapshots, and tags.
+   - Add `{ label: "Projects", href: "#projects" }` to `NAV_ITEMS`.
+4. **`components/FeaturedProjects.tsx`**:
+   - Build the interactive showcase component with category filter tabs and visual cards.
+5. **`App.tsx` & `components/Home.tsx`**:
+   - Mount `<FeaturedProjects />` in the page flow.
+6. **Verification**:
+   - Run `compile_applet` and `lint_applet` to confirm clean compilation.

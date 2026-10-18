@@ -1,11 +1,12 @@
 
-import { PenTool, Rocket, Code, Layout, Globe, Search, Megaphone, Mail, FileText, Globe2, Building2, Briefcase, Languages } from "lucide-react";
-import { AI_Tool, Credential, NavItem, Service, CreativeWork, FAQItem, JobRole, Testimonial, BlogPost } from "./types";
+import { PenTool, Rocket, Code, Layout, Globe, Search, Megaphone, Mail, FileText, Globe2, Building2, Briefcase, Languages, ExternalLink, Sparkles, ShoppingBag, Server, Compass } from "lucide-react";
+import { AI_Tool, Credential, NavItem, Service, CreativeWork, FAQItem, JobRole, Testimonial, BlogPost, FeaturedProject } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "About", href: "#experience" },
-  { label: "AI Strategy", href: "#ai-strategy" },
+  { label: "Projects", href: "#projects" },
   { label: "Services", href: "#services" },
+  { label: "AI Strategy", href: "#ai-strategy" },
   { label: "Credentials", href: "#credentials" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -331,3 +332,67 @@ export const BLOG_POSTS: BlogPost[] = [
     `
   }
 ];
+
+export const FEATURED_PROJECTS: FeaturedProject[] = [
+  {
+    id: "emarket247",
+    title: "eMarket247",
+    headline: "Fashion & Jewellery in Bangladesh",
+    description: "Leading the e-commerce storefront development, UX architecture, and digital acquisition funnels for Bangladesh's modern fashion and jewellery brand. Currently under active development.",
+    url: "https://emarket247.shop",
+    category: "client",
+    categoryLabel: "Client Project",
+    status: "Under Development",
+    statusType: "development",
+    imageUrl: "https://emarket247.shop/assets/images/editorial/emarket247-hero-vermilion-atelier.webp",
+    fallbackImageUrl: "https://s0.wp.com/mshots/v1/https://emarket247.shop?w=800&h=500",
+    tags: ["E-Commerce Storefront", "Fashion & Jewellery", "Client Acquisition", "UI/UX Architecture"],
+    metrics: "Active Client Build"
+  },
+  {
+    id: "hostmarc",
+    title: "HostMarc",
+    headline: "Websites, Hosting & Growth for Ambitious Businesses",
+    description: "High-performance web engineering, independent server benchmarks, and transparent hosting guidance helping ambitious businesses scale online with verified performance and speed.",
+    url: "https://hostmarc.pages.dev",
+    category: "affiliate",
+    categoryLabel: "Affiliate & Personal Venture",
+    status: "Live Venture",
+    statusType: "live",
+    imageUrl: "https://s0.wp.com/mshots/v1/https://hostmarc.pages.dev?w=800&h=500",
+    fallbackImageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800",
+    tags: ["Web Engineering", "Affiliate Ecosystem", "Server Benchmarks", "Cloudflare Pages"],
+    metrics: "Personal Brand & Affiliate"
+  },
+  {
+    id: "ural-travel",
+    title: "URAL Travel Guides",
+    headline: "Bangladesh Travel Guides, Flights & Visas from Dhaka",
+    description: "Comprehensive travel content engine empowering Bangladeshi travelers with BDT flight guidance, visa checklists for Bangladeshi passport holders, regional destination itineraries, and trip-budget planners.",
+    url: "https://ural-travel.pages.dev",
+    category: "next",
+    categoryLabel: "Next Project",
+    status: "Next Venture · In Beta",
+    statusType: "upcoming",
+    imageUrl: "https://ural-travel.pages.dev/og-image.jpg",
+    fallbackImageUrl: "https://s0.wp.com/mshots/v1/https://ural-travel.pages.dev?w=800&h=500",
+    tags: ["Travel Content Engine", "Programmatic SEO", "Flight & Visa Guides", "Cloudflare Pages"],
+    metrics: "Upcoming Launch"
+  },
+  {
+    id: "sunlit",
+    title: "Sunlit Interior",
+    headline: "Premier Bangladeshi Interior & Home-Service Company",
+    description: "End-to-end digital infrastructure and client acquisition funnels deployed on WordPress and Elementor, driving multi-channel lead generation and market leadership.",
+    url: "https://sunlitbd.com",
+    category: "client",
+    categoryLabel: "Client Project",
+    status: "Live Case Study",
+    statusType: "live",
+    imageUrl: "https://s0.wp.com/mshots/v1/https://sunlitbd.com?w=800&h=500",
+    fallbackImageUrl: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800",
+    tags: ["WordPress + Elementor", "Local SEO Lead Gen", "Market Positioning", "Client Acquisition"],
+    metrics: "Current Client Leadership"
+  }
+];
+

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import VerifiedExperience from './components/VerifiedExperience';
 import Experience from './components/Experience';
+import FeaturedProjects from './components/FeaturedProjects';
 import Services from './components/Services';
 import AIStrategy from './components/AIStrategy';
 import Credentials from './components/Credentials';
@@ -20,6 +21,7 @@ function App() {
         <Hero />
         <VerifiedExperience />
         <Experience />
+        <FeaturedProjects />
         <Services />
         <AIStrategy />
         <Credentials />

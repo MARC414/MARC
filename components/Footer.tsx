@@ -73,8 +73,9 @@ const Footer: React.FC = () => {
           <div className="space-y-6 md:col-span-2 lg:col-span-1">
             <h3 className="text-sm font-bold text-slate-900 uppercase tracking-widest border-b border-slate-100 pb-2 inline-block">Quick Links</h3>
             <ul className="space-y-3">
-               <li><a href="#ai-strategy" className="text-slate-500 hover:text-marc-primary transition-colors hover:translate-x-1 inline-block">AI Strategy</a></li>
+               <li><a href="#projects" className="text-slate-500 hover:text-marc-primary transition-colors hover:translate-x-1 inline-block">Projects</a></li>
                <li><a href="#services" className="text-slate-500 hover:text-marc-primary transition-colors hover:translate-x-1 inline-block">Services</a></li>
+               <li><a href="#ai-strategy" className="text-slate-500 hover:text-marc-primary transition-colors hover:translate-x-1 inline-block">AI Strategy</a></li>
                <li><a href="#credentials" className="text-slate-500 hover:text-marc-primary transition-colors hover:translate-x-1 inline-block">Credentials</a></li>
                <li><a href="#faq" className="text-slate-500 hover:text-marc-primary transition-colors hover:translate-x-1 inline-block">FAQ</a></li>
                <li><a href="#contact" className="text-marc-primary font-bold hover:text-blue-700 transition-colors">Book a Consultation</a></li>
