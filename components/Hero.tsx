@@ -154,29 +154,6 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Personal Introduction & Meaning of MARC */}
-                <div className="mt-3.5 p-4 bg-gradient-to-br from-slate-50 via-white to-blue-50/50 rounded-2xl border border-slate-200/90 shadow-sm text-left">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-marc-primary"></span>
-                      <span className="text-[11px] font-bold text-marc-primary uppercase tracking-wider">About The Name</span>
-                    </div>
-                    <span className="text-[10px] uppercase font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">Acronym</span>
-                  </div>
-                  <p className="text-sm font-medium text-slate-800 leading-snug">
-                    "Hi, I am <strong className="font-bold text-slate-900 font-serif">Momen Ahmedur Rahman Chowdhury</strong> (<span className="text-marc-primary font-bold tracking-tight">MARC</span>)."
-                  </p>
-                  <div className="mt-2.5 pt-2.5 border-t border-slate-200/60 flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
-                    <span className="font-mono font-bold text-marc-primary bg-blue-50 px-1 rounded border border-blue-100">M</span>omen
-                    <span className="text-slate-300">·</span>
-                    <span className="font-mono font-bold text-marc-primary bg-blue-50 px-1 rounded border border-blue-100">A</span>hmedur
-                    <span className="text-slate-300">·</span>
-                    <span className="font-mono font-bold text-marc-primary bg-blue-50 px-1 rounded border border-blue-100">R</span>ahman
-                    <span className="text-slate-300">·</span>
-                    <span className="font-mono font-bold text-marc-primary bg-blue-50 px-1 rounded border border-blue-100">C</span>howdhury
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>

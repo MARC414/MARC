@@ -359,7 +359,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     categoryLabel: "Affiliate & Personal Venture",
     status: "Live Venture",
     statusType: "live",
-    imageUrl: "https://s0.wp.com/mshots/v1/https://hostmarc.pages.dev?w=800&h=500",
+    imageUrl: "/hostmarc-banner.svg",
     fallbackImageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800",
     tags: ["Web Engineering", "Affiliate Ecosystem", "Server Benchmarks", "Cloudflare Pages"],
     metrics: "Personal Brand & Affiliate"

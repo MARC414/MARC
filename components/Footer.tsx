@@ -66,6 +66,26 @@ const Footer: React.FC = () => {
                     </a>
                  </div>
               </div>
+
+              <div className="flex items-start group">
+                 <Globe className="w-5 h-5 text-slate-400 group-hover:text-marc-primary mt-0.5 mr-3 transition-colors" />
+                 <div>
+                    <p className="text-xs text-slate-400 uppercase font-semibold">HostMarc Platform</p>
+                    <a href="https://hostmarc.pages.dev" target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-marc-primary font-medium transition-colors">
+                      hostmarc.pages.dev
+                    </a>
+                 </div>
+              </div>
+
+              <div className="flex items-start group">
+                 <Globe className="w-5 h-5 text-slate-400 group-hover:text-marc-primary mt-0.5 mr-3 transition-colors" />
+                 <div>
+                    <p className="text-xs text-slate-400 uppercase font-semibold">URAL Travel Platform</p>
+                    <a href="https://ural-travel.pages.dev" target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-marc-primary font-medium transition-colors">
+                      ural-travel.pages.dev
+                    </a>
+                 </div>
+              </div>
             </div>
           </div>
 
